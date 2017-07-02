@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// Material Imports:
 import { MdToolbarModule, 
 		 MdIconModule, 
 		 MdSidenavModule, 
@@ -8,11 +9,13 @@ import { MdToolbarModule,
 		 MdListModule,
 		 MdCardModule,
 		 MdInputModule,
-		 MdSelectModule } from '@angular/material';
-		 
+		 MdSelectModule,
+		 MdGridListModule } from '@angular/material';
+
+// General Components
 import { HeaderComponent } from './header/header.component';
 
-export const MATERIAL_COMPONENTS = [
+export const REUSABLE_COMPONENTS_IMPORTS = [
 	MdToolbarModule, 
 	MdIconModule, 
 	MdSidenavModule, 
@@ -20,12 +23,26 @@ export const MATERIAL_COMPONENTS = [
 	MdListModule,
 	MdCardModule,
 	MdInputModule,
-	MdSelectModule
+	MdSelectModule,
+	MdGridListModule
+]
+
+export const REUSABLE_COMPONENTS_EXPORTS = [
+	MdToolbarModule, 
+	MdIconModule, 
+	MdSidenavModule, 
+	MdButtonModule,
+	MdListModule,
+	MdCardModule,
+	MdInputModule,
+	MdSelectModule,
+	MdGridListModule,
+	HeaderComponent
 ]
 
 @NgModule({
-	imports: MATERIAL_COMPONENTS,
-	exports: MATERIAL_COMPONENTS,
+	imports: REUSABLE_COMPONENTS_IMPORTS, 
+	exports: REUSABLE_COMPONENTS_EXPORTS,
 	declarations: [HeaderComponent]
 })
 export class MaterialModule {}
