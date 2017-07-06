@@ -1,7 +1,7 @@
 <md-card>
-	<md-card-title>{{ vertical }}</md-card-title>
-	<md-card-subtitle>{{ description }}</md-card-subtitle>
-	<md-card-actions>
-		<a md-raised-button>View</a>
+	<md-card-title>{{ vertical.title }}</md-card-title>
+	<md-card-subtitle>{{ vertical.description }}</md-card-subtitle>
+	<md-card-actions align="end" class="actions">
+		<a md-raised-button (click)="view(vertical.link, vertical.id)">View</a>
 	</md-card-actions>
 </md-card>
